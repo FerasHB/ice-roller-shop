@@ -8,8 +8,8 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #fafafa;
-  color: #333;
+  background-color: #f8f8f8; /* helles Grau */
+  color: #222; /* dunkles Grau für Text */
 }
 
 /* --- Header --- */
@@ -20,7 +20,7 @@ body {
 }
 
 .header-inner {
-  max-width: 1200px;
+  max-width: 1120px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -33,8 +33,13 @@ body {
   color: #222;
 }
 
+.nav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
 .nav a {
-  margin-left: 15px;
   text-decoration: none;
   color: #444;
 }
@@ -45,15 +50,15 @@ body {
 
 /* --- Container --- */
 .container {
-  max-width: 1200px;
+  max-width: 1120px;
   margin: auto;
-  padding: 20px;
+  padding: 24px 18px;
 }
 
 /* --- Hero Section --- */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -66,6 +71,7 @@ body {
 .lead {
   font-size: 1.1rem;
   margin: 10px 0 20px;
+  max-width: 42ch;
 }
 
 .badges {
@@ -84,7 +90,7 @@ body {
 .card {
   background: #fff;
   padding: 15px;
-  border-radius: 12px;
+  border-radius: 14px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
@@ -146,16 +152,23 @@ body {
 }
 
 /* --- Gallery --- */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
 .gallery img {
   width: 100%;
-  margin-bottom: 10px;
+  height: auto;
   border-radius: 12px;
+  display: block;
 }
 
 /* --- Grid 2 --- */
 .grid-2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 15px;
 }
 
@@ -177,74 +190,28 @@ body {
   padding: 20px;
   font-size: 0.85rem;
   color: #666;
+  background: #fff;
+  border-top: 1px solid #eee;
 }
 
-/* --- Responsive --- */
-@media (max-width: 900px) {
+/* --- Desktop Layout --- */
+@media (min-width: 901px) {
   .hero {
-    grid-template-columns: 1fr;
-  }
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-  .header-inner {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-/* ===== Desktop-Fixes ===== */
-
-/* Breitere, aber begrenzte Bühne */
-.container{
-  max-width: 1120px;   /* statt 1200+ wirkt kompakter */
-  padding: 24px 18px;
-}
-
-/* Hero stabilisieren: linke Spalte fix, rechte flexibel */
-@media (min-width: 901px){
-  .hero{
-    display: grid;
-    grid-template-columns: 420px 1fr;  /* linke Spalte fix */
+    grid-template-columns: 420px 1fr; /* Linke Spalte fix */
     gap: 24px;
     align-items: start;
   }
-}
 
-/* Produktkarte: bleibt sichtbar beim Scrollen */
-@media (min-width: 901px){
-  .card{
-    border-radius: 14px;
-  }
-  .hero .card:first-of-type{
+  .hero .card:first-of-type {
     position: sticky;
-    top: 96px;          /* unter der Header-Höhe */
+    top: 96px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
   }
 }
-
-/* Galerie als ruhige 2-Spalten auf Desktop, 1 Spalte auf Handy */
-.gallery{
-  display: grid;
-  grid-template-columns: 1fr;   /* mobile default */
-  gap: 12px;
-}
-@media (min-width: 901px){
-  .gallery{ grid-template-columns: 1fr 1fr; }
-}
-/* Bilder sicher einpassen, gleiche Ecken */
-.gallery img{
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-  /* Optional: feste Kachelhöhe für elegantes Mosaik */
-  /* aspect-ratio: 4 / 3; object-fit: cover; */
-}
-
-/* Typo & Zeilenlänge auf Desktop angenehmer */
-@media (min-width: 901px){
-  .lead{ max-width: 42ch; }
-}
-
-/* Header-Navigation nicht gequetscht */
-.nav{ display:flex; gap:14px; flex-wrap:wrap; }
-.nav a{ margin:0; }
