@@ -192,3 +192,59 @@ body {
     gap: 10px;
   }
 }
+/* ===== Desktop-Fixes ===== */
+
+/* Breitere, aber begrenzte Bühne */
+.container{
+  max-width: 1120px;   /* statt 1200+ wirkt kompakter */
+  padding: 24px 18px;
+}
+
+/* Hero stabilisieren: linke Spalte fix, rechte flexibel */
+@media (min-width: 901px){
+  .hero{
+    display: grid;
+    grid-template-columns: 420px 1fr;  /* linke Spalte fix */
+    gap: 24px;
+    align-items: start;
+  }
+}
+
+/* Produktkarte: bleibt sichtbar beim Scrollen */
+@media (min-width: 901px){
+  .card{
+    border-radius: 14px;
+  }
+  .hero .card:first-of-type{
+    position: sticky;
+    top: 96px;          /* unter der Header-Höhe */
+  }
+}
+
+/* Galerie als ruhige 2-Spalten auf Desktop, 1 Spalte auf Handy */
+.gallery{
+  display: grid;
+  grid-template-columns: 1fr;   /* mobile default */
+  gap: 12px;
+}
+@media (min-width: 901px){
+  .gallery{ grid-template-columns: 1fr 1fr; }
+}
+/* Bilder sicher einpassen, gleiche Ecken */
+.gallery img{
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  /* Optional: feste Kachelhöhe für elegantes Mosaik */
+  /* aspect-ratio: 4 / 3; object-fit: cover; */
+}
+
+/* Typo & Zeilenlänge auf Desktop angenehmer */
+@media (min-width: 901px){
+  .lead{ max-width: 42ch; }
+}
+
+/* Header-Navigation nicht gequetscht */
+.nav{ display:flex; gap:14px; flex-wrap:wrap; }
+.nav a{ margin:0; }

@@ -18,7 +18,7 @@ const TITLES = {
 };
 
 // PayPal erst aktivieren, wenn live (Gewerbe + PayPal Business)
-window.PAYPAL_LIVE = false;
+window.PAYPAL_LIVE = true;
 
 function setVariant(variant) {
   const lang = document.documentElement.lang || 'de';
