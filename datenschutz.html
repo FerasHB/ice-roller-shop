@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datenschutzerklärung</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">ICE ROLLER</div>
+      <nav class="nav">
+        <a href="index.html">DE</a>
+        <a href="en.html">EN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1 style="font-family:'Playfair Display',serif">Datenschutzerklärung</h1>
+      <p>Diese Website befindet sich derzeit im Testbetrieb. Es werden keine personenbezogenen Daten gespeichert, 
+         außer den Informationen, die Sie aktiv über das Formular oder per E-Mail senden.</p>
+
+      <h3>Verantwortlicher</h3>
+      <p>&lt;Dein Name / Firmenname&gt;<br>
+         &lt;Straße, PLZ, Ort, Land&gt;<br>
+         info@example.com</p>
+
+      <h3>Verwendung von E-Mails</h3>
+      <p>E-Mails, die Sie uns senden, werden ausschließlich zur Kontaktaufnahme verwendet und nicht an Dritte weitergegeben.</p>
+
+      <h3>Cookies & Tracking</h3>
+      <p>Derzeit werden keine Cookies oder Analyse-Tools eingesetzt.</p>
+
+      <p class="notice">Platzhalter – bitte vor Livegang rechtlich prüfen und anpassen.</p>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    © <span id="year"></span> Ice Roller
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
