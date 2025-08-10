@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imprint</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">ICE ROLLER</div>
+      <nav class="nav">
+        <a href="index.html">DE</a>
+        <a href="en.html">EN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1 style="font-family:'Playfair Display',serif">Imprint</h1>
+      <p>Company: &lt;Your Company Name&gt;<br>
+         Address: &lt;Street, ZIP, City, Country&gt;<br>
+         Email: info@example.com<br>
+         Phone: &lt;Phone&gt;<br>
+         VAT ID: &lt;if applicable&gt;<br>
+         Responsible according to § 5 TMG: &lt;Name&gt;
+      </p>
+      <p class="notice">Placeholder. Please review and update before going live.</p>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    © <span id="year"></span> Ice Roller
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
