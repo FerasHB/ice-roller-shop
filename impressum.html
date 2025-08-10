@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impressum</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">ICE ROLLER</div>
+      <nav class="nav">
+        <a href="index.html">DE</a>
+        <a href="en.html">EN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1 style="font-family:'Playfair Display',serif">Impressum</h1>
+      <p>Unternehmen: &lt;Dein Firmenname&gt;<br>
+         Adresse: &lt;Straße, PLZ, Ort, Land&gt;<br>
+         E-Mail: info@example.com<br>
+         Telefon: &lt;Telefon&gt;<br>
+         USt-IdNr.: &lt;falls vorhanden&gt;<br>
+         Verantwortlich i.S.d. § 5 TMG: &lt;Name&gt;
+      </p>
+      <p class="notice">Platzhalter. Bitte vor Livegang rechtlich prüfen und anpassen.</p>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    © <span id="year"></span> Ice Roller
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
