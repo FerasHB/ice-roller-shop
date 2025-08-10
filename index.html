@@ -1,128 +1,199 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ice Roller – Premium Beauty</title>
-  <meta name="description" content="Premium Ice Roller aus Silikon & Edelstahl. Kühlend, abschwellend, sofort frischer Glow.">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <div class="header-inner">
-      <div class="brand">ICE ROLLER</div>
-      <nav class="nav">
-        <a href="index.html">DE</a>
-        <a href="en.html">EN</a>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-      </nav>
-    </div>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ice Roller – Premium Beauty</title>
+    <meta
+      name="description"
+      content="Premium Ice Roller aus Silikon & Edelstahl. Kühlend, abschwellend, sofort frischer Glow."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="brand">ICE ROLLER</div>
+        <nav class="nav">
+          <a href="index.html">DE</a>
+          <a href="en.html">EN</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+      </div>
+    </header>
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <div class="kicker">Premium Beauty</div>
-        <h1>Cool down. Glow up.</h1>
-        <p class="lead">Reduziert morgendliche Schwellungen und beruhigt die Haut in 60&nbsp;Sekunden – ganz ohne Wirkstoffe.</p>
+    <main class="container">
+      <section class="hero">
+        <div>
+          <div class="kicker">Premium Beauty</div>
+          <h1>Cool down. Glow up.</h1>
+          <p class="lead">
+            Reduziert morgendliche Schwellungen und beruhigt die Haut in
+            60&nbsp;Sekunden – ganz ohne Wirkstoffe.
+          </p>
 
-        <div class="badges">
-          <span class="badge">Ohne Chemie</span>
-          <span class="badge">EU-Versand (geplant)</span>
-          <span class="badge">Für alle Hauttypen</span>
+          <div class="badges">
+            <span class="badge">Ohne Chemie</span>
+            <span class="badge">EU-Versand (geplant)</span>
+            <span class="badge">Für alle Hauttypen</span>
+          </div>
+
+          <div class="card">
+            <h2 class="product-title">Ice Roller – Silikon</h2>
+
+            <div class="variant">
+              <label
+                ><input
+                  type="radio"
+                  name="variant"
+                  value="silicone"
+                  checked
+                  onchange="setVariant(this.value)"
+                />
+                Silikon</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="variant"
+                  value="steel"
+                  onchange="setVariant(this.value)"
+                />
+                Edelstahl</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="variant"
+                  value="bundle"
+                  onchange="setVariant(this.value)"
+                /><span class="ribbon">Bundle</span> Silikon + Edelstahl</label
+              >
+            </div>
+
+            <p>
+              <span class="price">19.90 €</span>
+              <span class="strike">24,90 €</span>
+            </p>
+            <p class="small notice">
+              Intro-Preis. inkl. MwSt. (später). Versand wird im Checkout
+              angezeigt.
+            </p>
+
+            <div class="hr"></div>
+
+            <!-- TESTBETRIEB: Lead-Formular statt Verkauf -->
+            <form onsubmit="onLeadSubmit(event)">
+              <label for="leadEmail" class="small"
+                >Testbetrieb: Trag deine E-Mail ein, um benachrichtigt zu
+                werden, sobald der Verkauf live ist.</label
+              >
+              <div class="form-row">
+                <input
+                  class="input"
+                  id="leadEmail"
+                  type="email"
+                  placeholder="deine@email.de"
+                  required
+                />
+                <button class="btn" type="submit">Vormerken</button>
+              </div>
+            </form>
+
+            <!-- PayPal-Checkout (für Live später aktivieren) -->
+            <div style="margin-top: 14px">
+              <div id="paypal-button-container"></div>
+              <div class="paypal-guard notice">
+                PayPal-Checkout ist im Testbetrieb deaktiviert. (Wird bei
+                Livegang aktiviert.)
+              </div>
+            </div>
+          </div>
+
+          <p class="notice">
+            Hinweis: Keine Heilsversprechen. Nicht bei entzündeter Haut
+            verwenden. Für extra Kühle im Kühlschrank lagern.
+          </p>
         </div>
 
         <div class="card">
-          <h2 class="product-title">Ice Roller – Silikon</h2>
-
-          <div class="variant">
-            <label><input type="radio" name="variant" value="silicone" checked onchange="setVariant(this.value)"> Silikon</label>
-            <label><input type="radio" name="variant" value="steel" onchange="setVariant(this.value)"> Edelstahl</label>
-            <label><input type="radio" name="variant" value="bundle" onchange="setVariant(this.value)"><span class="ribbon">Bundle</span> Silikon + Edelstahl</label>
+          <div class="gallery">
+            <img
+              src="images/ice1.jpg"
+              alt="Ice Roller – Anwendung"
+              style="width: 100%; border-radius: 12px"
+            />
+            <img
+              src="images/ice2.jpg"
+              alt="Ice Roller – Edelstahlkopf"
+              style="width: 100%; border-radius: 12px"
+            />
+            <img
+              src="images/ice3.jpg"
+              alt="Ice Roller – Silikon-Variante"
+              style="width: 100%; border-radius: 12px"
+            />
           </div>
 
-          <p><span class="price">19.90 €</span> <span class="strike">24,90 €</span></p>
-          <p class="small notice">Intro-Preis. inkl. MwSt. (später). Versand wird im Checkout angezeigt.</p>
+          <p>
+            <strong>Anwendung:</strong> 1–2 Minuten sanft über Gesicht,
+            Augenpartie und Hals rollen. Zuvor reinigen.
+          </p>
 
-          <div class="hr"></div>
-
-          <!-- TESTBETRIEB: Lead-Formular statt Verkauf -->
-          <form onsubmit="onLeadSubmit(event)">
-            <label for="leadEmail" class="small">Testbetrieb: Trag deine E-Mail ein, um benachrichtigt zu werden, sobald der Verkauf live ist.</label>
-            <div class="form-row">
-              <input class="input" id="leadEmail" type="email" placeholder="deine@email.de" required>
-              <button class="btn" type="submit">Vormerken</button>
+          <div class="grid-2">
+            <div>
+              <h3 style="font-family: 'Playfair Display', serif">
+                Warum es wirkt
+              </h3>
+              <ul>
+                <li>Kälte verengt Blutgefäße → weniger Schwellung</li>
+                <li>Beruhigt gereizte Haut, verleiht Glow</li>
+                <li>100% natürlich, keine Wirkstoffe</li>
+              </ul>
             </div>
-          </form>
-
-          <!-- PayPal-Checkout (für Live später aktivieren) -->
-          <div style="margin-top:14px">
-            <div id="paypal-button-container"></div>
-            <div class="paypal-guard notice">PayPal-Checkout ist im Testbetrieb deaktiviert. (Wird bei Livegang aktiviert.)</div>
+            <div>
+              <h3 style="font-family: 'Playfair Display', serif">
+                Versand & Retoure
+              </h3>
+              <ul>
+                <li>Geplanter EU-Versand: 3–7 Werktage</li>
+                <li>14 Tage Widerruf</li>
+                <li>Support per E-Mail</li>
+              </ul>
+            </div>
           </div>
         </div>
+      </section>
 
-        <p class="notice">Hinweis: Keine Heilsversprechen. Nicht bei entzündeter Haut verwenden. Für extra Kühle im Kühlschrank lagern.</p>
-      </div>
+      <section class="section card">
+        <h3 style="font-family: 'Playfair Display', serif">FAQ</h3>
+        <dl class="faq">
+          <dt>Ist Edelstahl kälter als Silikon?</dt>
+          <dd>
+            Ja, Edelstahl hält die Kälte länger und fühlt sich intensiver an.
+          </dd>
+          <dt>Für sensible Haut geeignet?</dt>
+          <dd>Meistens ja. Bitte kurz an kleiner Stelle testen.</dd>
+          <dt>Wie reinige ich den Roller?</dt>
+          <dd>Mit milder Seife abspülen und gründlich trocknen.</dd>
+        </dl>
+      </section>
 
-      <div class="card">
-        <div class="gallery">
-          <div class="ph"><span>Produktfoto – Silikon</span></div>
-          <div class="ph"><span>Produktfoto – Edelstahl</span></div>
-          <div class="ph"><span>Produktfoto – Bundle</span></div>
-        </div>
+      <footer class="footer">
+        © <span id="year"></span> Ice Roller ·
+        <a class="nav" href="widerruf.html">Widerruf</a> ·
+        <a class="nav" href="impressum.html">Impressum</a> ·
+        <a class="nav" href="datenschutz.html">Datenschutz</a>
+      </footer>
+    </main>
 
-        <p><strong>Anwendung:</strong> 1–2 Minuten sanft über Gesicht, Augenpartie und Hals rollen. Zuvor reinigen.</p>
+    <script src="script.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
-        <div class="grid-2">
-          <div>
-            <h3 style="font-family:'Playfair Display',serif">Warum es wirkt</h3>
-            <ul>
-              <li>Kälte verengt Blutgefäße → weniger Schwellung</li>
-              <li>Beruhigt gereizte Haut, verleiht Glow</li>
-              <li>100% natürlich, keine Wirkstoffe</li>
-            </ul>
-          </div>
-          <div>
-            <h3 style="font-family:'Playfair Display',serif">Versand & Retoure</h3>
-            <ul>
-              <li>Geplanter EU-Versand: 3–7 Werktage</li>
-              <li>14 Tage Widerruf</li>
-              <li>Support per E-Mail</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section card">
-      <h3 style="font-family:'Playfair Display',serif">FAQ</h3>
-      <dl class="faq">
-        <dt>Ist Edelstahl kälter als Silikon?</dt>
-        <dd>Ja, Edelstahl hält die Kälte länger und fühlt sich intensiver an.</dd>
-        <dt>Für sensible Haut geeignet?</dt>
-        <dd>Meistens ja. Bitte kurz an kleiner Stelle testen.</dd>
-        <dt>Wie reinige ich den Roller?</dt>
-        <dd>Mit milder Seife abspülen und gründlich trocknen.</dd>
-      </dl>
-    </section>
-
-    <footer class="footer">
-      © <span id="year"></span> Ice Roller ·
-      <a class="nav" href="widerruf.html">Widerruf</a> ·
-      <a class="nav" href="impressum.html">Impressum</a> ·
-      <a class="nav" href="datenschutz.html">Datenschutz</a>
-    </footer>
-  </main>
-
-  <script src="script.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-  <!-- Live erst aktivieren (nach Gewerbe & PayPal Business):
+    <!-- Live erst aktivieren (nach Gewerbe & PayPal Business):
   <script src="https://www.paypal.com/sdk/js?client-id=YOUR-PAYPAL-CLIENT-ID&currency=EUR"></script>
-  -->
-</body>
+  --></body>
 </html>
