@@ -1,3 +1,43 @@
+:root {
+  /* Light (Default) – optional, falls du auch Hellmodus hast */
+  --bg: #f7f7f8;
+  --bg-elev: #ffffff;
+  --text: #1f1f1f;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+
+  --primary: #4a90e2; /* zeitloses Blau */
+  --accent-red: #ff6b6b; /* weiches Rot */
+  --success: #2ecc71;
+
+  --badge: #eef2f7;
+  --input-bg: #ffffff;
+  --btn-bg: #111827;
+  --btn-bg-hover: #0b1220;
+  --shadow: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Mode automatisch, wenn System dunkel ist */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --bg-elev: #1e1e1e;
+    --text: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --border: #2f2f2f;
+
+    --primary: #4a90e2;
+    --accent-red: #ff6b6b;
+    --success: #2ecc71;
+
+    --badge: #2a2a2a;
+    --input-bg: #2a2a2a;
+    --btn-bg: #2a2a2a;
+    --btn-bg-hover: #3a3a3a;
+    --shadow: rgba(0, 0, 0, 0.4);
+  }
+}
+
 /* --- Basic Reset --- */
 * {
   margin: 0;
@@ -8,14 +48,14 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f8f8f8; /* helles Grau */
-  color: #222; /* dunkles Grau für Text */
+  background-color: var(--bg); /* sehr dunkles Grau */
+  color: var(--text); /* hellgrau für Text */
 }
 
 /* --- Header --- */
 .header {
-  background: #fff;
-  border-bottom: 1px solid #eee;
+  background: var(--bg-elev);
+  border-bottom: var(--border);
   padding: 10px 20px;
 }
 
@@ -30,7 +70,7 @@ body {
 .brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #222;
+  color: var(--text);
 }
 
 .nav {
@@ -41,11 +81,11 @@ body {
 
 .nav a {
   text-decoration: none;
-  color: #444;
+  color: #b0b0b0;
 }
 
 .nav a:hover {
-  color: #000;
+  color: #ffffff;
 }
 
 /* --- Container --- */
@@ -63,7 +103,7 @@ body {
 }
 
 .kicker {
-  color: #888;
+  color: #bbbbbb;
   text-transform: uppercase;
   font-size: 0.9rem;
 }
@@ -80,23 +120,25 @@ body {
 
 .badge {
   display: inline-block;
-  background: #eee;
+  background: #2a2a2a;
   padding: 5px 10px;
   margin: 3px;
   border-radius: 8px;
   font-size: 0.85rem;
+  color: #e0e0e0;
 }
 
 .card {
-  background: #fff;
+  background: #1e1e1e;
   padding: 15px;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .product-title {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .variant label {
@@ -106,29 +148,31 @@ body {
 
 .price {
   font-size: 1.5rem;
-  color: #e63946;
+  color: #ff6b6b; /* warmes Rot */
 }
 
 .strike {
   text-decoration: line-through;
   margin-left: 5px;
-  color: #777;
+  color: #999;
 }
 
 .notice {
   font-size: 0.85rem;
-  color: #666;
+  color: #aaaaaa;
 }
 
 .input {
   padding: 8px;
-  border: 1px solid #090909;
+  border: 1px solid #444;
   border-radius: 6px;
   flex: 1;
+  background-color: #2a2a2a;
+  color: #fff;
 }
 
 .btn {
-  background: #222;
+  background: #333;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -137,7 +181,7 @@ body {
 }
 
 .btn:hover {
-  background: #000;
+  background: #555;
 }
 
 .form-row {
@@ -147,7 +191,7 @@ body {
 }
 
 .hr {
-  border-top: 1px solid #eee;
+  border-top: 1px solid #333;
   margin: 15px 0;
 }
 
@@ -176,12 +220,13 @@ body {
 .faq dt {
   font-weight: bold;
   margin-top: 10px;
+  color: #fff;
 }
 
 .faq dd {
   margin-left: 15px;
   margin-bottom: 10px;
-  color: #555;
+  color: #ccc;
 }
 
 /* --- Footer --- */
@@ -189,15 +234,15 @@ body {
   text-align: center;
   padding: 20px;
   font-size: 0.85rem;
-  color: #666;
-  background: #fff;
-  border-top: 1px solid #eee;
+  color: #999;
+  background: #1e1e1e;
+  border-top: 1px solid #333;
 }
 
 /* --- Desktop Layout --- */
 @media (min-width: 901px) {
   .hero {
-    grid-template-columns: 420px 1fr; /* Linke Spalte fix */
+    grid-template-columns: 420px 1fr;
     gap: 24px;
     align-items: start;
   }
@@ -213,5 +258,51 @@ body {
 
   .gallery {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Dark Mode automatisch, wenn System dunkel ist */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  .header {
+    background: #1e1e1e;
+  }
+
+  .card {
+    background: #1e1e1e;
+  }
+
+  .input,
+  .btn {
+    background-color: #2a2a2a;
+    color: #fff;
+  }
+
+  .btn:hover {
+    background: #555;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --bg-elev: #1e1e1e;
+    --text: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --border: #2f2f2f;
+
+    --primary: #4a90e2;
+    --accent-red: #ff6b6b;
+    --success: #2ecc71;
+
+    --badge: #2a2a2a;
+    --input-bg: #2a2a2a;
+    --btn-bg: #2a2a2a;
+    --btn-bg-hover: #3a3a3a;
+    --shadow: rgba(0, 0, 0, 0.4);
   }
 }
