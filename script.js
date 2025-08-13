@@ -30,13 +30,16 @@ function setVariant(variant) {
   document.querySelectorAll('.paypal-guard').forEach(el => el.style.display = window.PAYPAL_LIVE ? 'none' : 'block');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  setVariant('silicone');
-  // PayPal nur rendern, wenn live und SDK geladen
-  if (window.PAYPAL_LIVE && window.paypal && document.getElementById('paypal-button-container')) {
+// ✅ Neue Funktion: PayPal-Buttons robust laden
+function renderPayPalButtons() {
+  if (!window.PAYPAL_LIVE) return;
+  const container = document.getElementById('paypal-button-container');
+  if (!container) return;
+
+  if (window.paypal && paypal.Buttons) {
     paypal.Buttons({
       style: { layout: 'vertical', shape: 'rect' },
-      createOrder: function(data, actions) {
+      createOrder: function (data, actions) {
         const v = document.body.getAttribute('data-variant') || 'silicone';
         const price = PRICES[v].toFixed(2);
         const lang = document.documentElement.lang || 'de';
@@ -45,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
           purchase_units: [{ amount: { value: price, currency_code: 'EUR' }, description: desc }]
         });
       },
-      onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
+      onApprove: function (data, actions) {
+        return actions.order.capture().then(function (details) {
           const lang = document.documentElement.lang || 'de';
           alert(lang === 'de'
             ? ('Danke, ' + details.payer.name.given_name + '! Bestellung eingegangen.')
@@ -54,7 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     }).render('#paypal-button-container');
+  } else {
+    setTimeout(renderPayPalButtons, 300); // Wiederholen nach 300ms
   }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setVariant('silicone');
+  renderPayPalButtons(); // Jetzt wird wiederholt geprüft
 });
 
 // Lead-Formular – öffnet Mail-Client
